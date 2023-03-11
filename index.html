@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- BOOTSTRAP CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <main align="center">
+        <h1 style="padding-top: 50px; color:white">TIC TAC TOE GAME</h1>
+        <p style="color:white"> <b>Player 1 = X <br> Player 2 = O</b> </p>
+        <div class="game_container">
+            <input onclick="gameFunction()" type="text" id="box1" maxlength="1">
+            <input onclick="gameFunction()" type="text" id="box2" maxlength="1">
+            <input onclick="gameFunction()" type="text" id="box3" maxlength="1">
+            <br> <br>
+            <input onclick="gameFunction()" type="text" id="box4" maxlength="1">
+            <input onclick="gameFunction()" type="text" id="box5" maxlength="1">
+            <input onclick="gameFunction()" type="text" id="box6" maxlength="1">
+            <br>  <br>
+            <input onclick="gameFunction()" type="text" id="box7" maxlength="1">
+            <input onclick="gameFunction()" type="text" id="box8" maxlength="1">
+            <input onclick="gameFunction()" type="text" id="box9" maxlength="1">
+        </div>
+        <br>
+        <button class="reset_btn" onclick="resetFunction()">Reset</button>
+
+        <p id="print"></p>
+    </main>
+
+
+    <script>
+        function gameFunction(){
+            var box1 = document.getElementById('box1').value;
+            var box2 = document.getElementById('box2').value;
+            var box3 = document.getElementById('box3').value;
+            var box4 = document.getElementById('box4').value;
+            var box5 = document.getElementById('box5').value;
+            var box6 = document.getElementById('box6').value;
+            var box7 = document.getElementById('box7').value;
+            var box8 = document.getElementById('box8').value;
+            var box9 = document.getElementById('box9').value;
+
+// IF CONDITION FOR PLAYER X WIN
+            if((box1 == 'X') && (box2 == 'X') && (box3 == 'X'))
+            {   document.getElementById('box4').disabled = true;
+                document.getElementById('box5').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player X win')
+            }
+            else if((box1 == 'X') && (box4 == 'X') && (box7 == 'X'))
+            {   document.getElementById('box2').disabled = true;
+                document.getElementById('box5').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player X win')
+            }
+            else if((box1 == 'X') && (box5 == 'X') && (box9 == 'X'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box7').disabled = true;
+                alert('Player X win')
+            }
+            else if((box7 == 'X') && (box8 == 'X') && (box9 == 'X'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box5').disabled = true;
+                document.getElementById('box1').disabled = true;
+                alert('Player X win')
+            }
+            else if((box4 == 'X') && (box5 == 'X') && (box6 == 'X'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player X win')
+            }
+            else if((box3 == 'X') && (box6 == 'X') && (box9 == 'X'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box5').disabled = true;
+                alert('Player X win')
+            }
+            else if((box2 == 'X') && (box5 == 'X') && (box8 == 'X'))
+            { 
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player X win')
+            }
+            else if((box3 == 'X') && (box5 == 'X') && (box7 == 'X'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player X win')
+            }
+
+// IF CONDITION FOR PLAYER O WIN
+            
+            else if((box1 == 'O') && (box2 == 'O') && (box3 == 'O'))
+            { 
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box5').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player O win')
+            }
+            else if((box1 == 'O') && (box4 == 'O') && (box7 == 'O'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box5').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player O win')
+            }
+            else if((box1 == 'O') && (box5 == 'O') && (box9 == 'O'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box7').disabled = true;
+                alert('Player O win')
+            }
+            else if((box7 == 'O') && (box8 == 'O') && (box9 == 'O'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box5').disabled = true;
+                document.getElementById('box1').disabled = true;
+                alert('Player O win')
+            }
+            else if((box4 == 'O') && (box5 == 'O') && (box6 == 'O'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player O win')
+            }
+            else if((box3 == 'O') && (box6 == 'O') && (box9 == 'O'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box5').disabled = true;
+                alert('Player O win')
+            }
+            else if((box2 == 'O') && (box5 == 'O') && (box8 == 'O'))
+            { 
+                document.getElementById('box3').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box7').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player O win')
+            }
+            else if((box3 == 'O') && (box5 == 'O') && (box7 == 'O'))
+            { 
+                document.getElementById('box2').disabled = true;
+                document.getElementById('box1').disabled = true;
+                document.getElementById('box6').disabled = true;
+                document.getElementById('box4').disabled = true;
+                document.getElementById('box8').disabled = true;
+                document.getElementById('box9').disabled = true;
+                alert('Player O win')
+            }
+
+// IF CONDITION FOR DRAW GAME
+            else if((box1 == 'X' || box1 == 'O') && (box2 == 'X' || box2 == 'O') && (box3 == 'X' || box3 == 'O') && (box4 == 'X' || box4 == 'O') && (box5 == 'X' || box5 == 'O') && (box6 == 'X' || box6 == 'O') && (box7 == 'X' || box7 == 'O') && (box8 == 'X' || box8 == 'O') && (box9 == 'X' || box9 == 'O') )
+            {
+                alert('Draw Game')
+            }
+        }
+
+// RESET FUNCTION
+        function resetFunction(){
+            document.getElementById('box1').value = '';
+            document.getElementById('box2').value = '';
+            document.getElementById('box3').value = '';
+            document.getElementById('box4').value = '';
+            document.getElementById('box5').value = '';
+            document.getElementById('box6').value = '';
+            document.getElementById('box7').value = '';
+            document.getElementById('box8').value = '';
+            document.getElementById('box9').value = '';
+            document.getElementById('box1').disabled = '';
+            document.getElementById('box2').disabled = '';
+            document.getElementById('box3').disabled = '';
+            document.getElementById('box4').disabled = '';
+            document.getElementById('box5').disabled = '';
+            document.getElementById('box6').disabled = '';
+            document.getElementById('box7').disabled = '';
+            document.getElementById('box8').disabled = '';
+            document.getElementById('box9').disabled = '';
+        }
+
+    </script>
+</body>
+</html>
